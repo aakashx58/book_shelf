@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leon Vasari — Filmography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Inter+Tight:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&text=戻るすべて閉じる開く監督作品映画を見る年〜静かな谷青の刻塩の川最後の夏緑の道灰の正午観察者落ちた鳥嵐の灯長い潮戦争赤い扉’&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&text=莱昂·瓦萨里&display=swap">
+<style>
+:root{--paper:#EDEBE6;--sheet:#F4F2ED;--ink:#141414;--muted:#6D6A63;--cobalt:#1F3FB0;--rule:rgba(20,20,20,.9);--ease:cubic-bezier(.2,.8,.2,1);
+--H:min(46vh,31vw);--sans:"Inter Tight","Noto Sans JP",system-ui,sans-serif;--serif:"Newsreader",Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--paper);color:var(--ink);overflow:hidden;user-select:none;-webkit-font-smoothing:antialiased;font-family:var(--sans)}
+a{color:var(--ink);text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+@media (pointer:fine){html,body,button,a{cursor:none}}
+.lbl{font:600 10.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase}
+.box{display:inline-flex;align-items:center;height:21px;padding:0 8px;border:1px solid var(--rule)}
+
+.grain{position:fixed;inset:0;z-index:40;pointer-events:none;mix-blend-mode:multiply;opacity:.55;
+background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .42 0 0 0 0 .38 0 0 0 .44 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.top{position:fixed;z-index:30;left:0;right:0;top:0;height:84px;padding:0 32px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.top>:first-child{justify-self:start}.top>:last-child{justify-self:end}
+.logo{display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--cobalt)}
+.logo b{font:700 22px/1 "Noto Serif SC",serif;letter-spacing:.04em}
+.logo i{font:600 9px/1 var(--sans);letter-spacing:.34em;padding-left:.34em;font-style:normal}
+
+.tabs{position:fixed;z-index:30;left:50%;transform:translateX(-50%);top:calc(50% - var(--H)/2 - 86px);display:flex}
+.tabs button{position:relative;z-index:1;height:23px;padding:0 11px;border:1px solid var(--rule);margin-left:-1px;white-space:nowrap;transition:color .45s var(--ease)}
+.tabs button:first-of-type{margin-left:0}
+.tabs button.on{color:#fff}
+.tabs .ind{position:absolute;left:0;top:0;height:23px;width:0;background:var(--cobalt);transition:width .6s var(--ease),transform .6s var(--ease)}
+
+.shelf{position:fixed;z-index:10;left:0;right:0;top:calc(50% - var(--H)/2 - 40px);height:calc(var(--H) + 80px);perspective:2200px;perspective-origin:50% 50%;touch-action:pan-y}
+.stage{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
+.tape{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.tape>div{position:absolute;top:calc(var(--H)/-2);height:var(--H);backface-visibility:hidden;border-radius:2px;background-color:#d8d2c4;background-repeat:no-repeat}
+.tape>div::after{content:"";position:absolute;inset:0;background:#000;opacity:var(--shade,0)}
+.sp{width:var(--ws);left:calc(var(--ws)/-2);transform:translateZ(calc(var(--d)/2))}
+.cv{width:var(--d);left:calc(var(--d)/-2);transform:rotateY(90deg) translateZ(calc(var(--ws)/2));box-shadow:0 30px 60px -28px rgba(20,16,10,.55)}
+
+.play{position:fixed;z-index:20;width:42px;height:42px;border-radius:50%;border:1px solid var(--cobalt);background:rgba(237,235,230,.75);display:grid;place-items:center;transform:translate(-50%,-50%) scale(0)}
+.play::before{content:"";margin-left:2px;border-left:12px solid var(--cobalt);border-top:7px solid transparent;border-bottom:7px solid transparent}
+
+.cap{position:fixed;z-index:20;left:50%;transform:translateX(-50%);top:calc(50% + var(--H)/2 + 30px);display:flex;flex-direction:column;align-items:center;gap:9px;pointer-events:none}
+.m{position:relative;overflow:hidden;width:min(92vw,760px);text-align:center}
+.m span{position:absolute;left:0;right:0;top:0;white-space:nowrap}
+.m.t{font:400 31px/1.12 var(--serif);letter-spacing:-.01em;height:1.12em}
+.m.s{color:var(--cobalt);font-weight:500;height:1.3em;line-height:1.3}
+.m.y{font:500 11px/1.3 var(--sans);letter-spacing:.08em;height:1.3em}
+
+.arr{position:fixed;z-index:30;top:calc(50% + var(--H)/2 + 40px);width:44px;height:44px;display:grid;place-items:center}
+.arr svg{width:18px;height:10px;fill:none;stroke:currentColor;stroke-width:1.2}
+.arr.l{left:20px}.arr.r{right:20px}
+.foot{position:fixed;z-index:30;left:32px;right:32px;bottom:26px;display:flex;justify-content:space-between}
+
+.cur{position:fixed;z-index:100;left:0;top:0;width:58px;height:58px;margin:-29px 0 0 -29px;pointer-events:none;display:none;visibility:hidden}
+@media (pointer:fine){.cur{display:block}}
+.cur .ring{position:absolute;inset:0;border:1.5px solid var(--ink);border-radius:50%;transition:transform .5s var(--ease),background-color .4s var(--ease),border-color .4s var(--ease)}
+.cur .dot{position:absolute;left:26px;top:26px;width:6px;height:6px;border-radius:50%;background:var(--ink);transition:transform .4s var(--ease)}
+.cur .tx{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#fff;font:600 10px/1.25 var(--sans);letter-spacing:.1em;transform:scale(0);transition:transform .45s var(--ease)}
+.cur.spine .ring{transform:scale(.72)}
+.cur.btn .ring{transform:scale(.55)}.cur.btn .dot{transform:scale(0)}
+.cur.open .ring{transform:scale(1.75);background:var(--cobalt);border-color:var(--cobalt)}
+.cur.open .dot{transform:scale(0)}.cur.open .tx{transform:scale(1)}
+
+.detail{position:fixed;inset:0;z-index:60;background:var(--sheet);visibility:hidden;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr);gap:4vw;padding:110px 6vw 56px 7vw}
+.detail .close{position:absolute;left:32px;top:31px}
+.detail .logo{position:absolute;left:0;right:0;top:0;height:84px;justify-content:center;pointer-events:none}
+.info{align-self:center;max-width:520px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.dm{overflow:hidden}
+.dm .lbl{display:block}
+#dsub{color:var(--cobalt);font-weight:500}
+#dt{font:400 clamp(44px,5.4vw,84px)/1 var(--serif);letter-spacing:-.025em}
+#dmeta{color:var(--muted)}
+#dsyn{font:400 17px/1.5 var(--serif);max-width:42ch}
+#dcred{font:italic 400 15px/1.4 var(--serif);color:var(--muted)}
+.watch{height:44px;padding:0 20px;border:1px solid var(--cobalt);color:var(--cobalt);margin-top:10px;display:inline-flex;align-items:center}
+.poster{height:min(100%,78vh);aspect-ratio:474/900;justify-self:center;align-self:center}
+.poster svg{width:100%;height:100%;display:block}
+
+@media (max-width:767px){
+:root{--H:min(60vw,40svh)}
+.top{height:64px;padding:0 16px}.top>:last-child{display:none}
+.logo b{font-size:17px}.logo i{font-size:7.5px}
+.lbl{font-size:9px}
+.tabs{top:calc(50% - var(--H)/2 - 70px)}.tabs button{padding:0 7px;font-size:9px}
+.m.t{font-size:24px}
+.arr.l{left:6px}.arr.r{right:6px}
+.foot{left:16px;right:16px;bottom:18px}
+.detail{display:flex;flex-direction:column;gap:24px;padding:84px 22px 40px;overflow-y:auto}
+.detail .close{left:16px;top:21px}.detail .logo{height:64px}
+.poster{order:-1;height:46svh;flex:none}
+#dt{font-size:42px}#dsyn{font-size:16px}
+.info{align-self:flex-start}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="box lbl" href="#">Back / 戻る</a>
+  <div class="logo"><b>莱昂·瓦萨里</b><i>LEON VASARI</i></div>
+  <span class="lbl">Career 1958年〜1989年</span>
+</header>
+
+<nav class="tabs" aria-label="Decades"><span class="ind"></span></nav>
+
+<section class="shelf" aria-label="Filmography shelf"><div class="stage"></div></section>
+<button class="play" aria-label="Open film"></button>
+
+<div class="cap" aria-live="polite"><div class="m t"></div><div class="m s lbl"></div><div class="m y"></div></div>
+
+<button class="arr l" aria-label="Previous film"><svg viewBox="0 0 18 10"><path d="M5 1L1 5l4 4M1 5h16"/></svg></button>
+<button class="arr r" aria-label="Next film"><svg viewBox="0 0 18 10"><path d="M13 1l4 4-4 4M17 5H1"/></svg></button>
+
+<footer class="foot lbl"><span>© Leon Vasari. All rights reserved.</span><span><a href="#">FB</a> / <a href="#">TW</a></span></footer>
+
+<div class="grain"></div>
+
+<div class="detail" role="dialog" aria-modal="true" aria-label="Film detail">
+  <button class="close box lbl">Close / 閉じる</button>
+  <div class="info">
+    <div class="dm"><span class="lbl" id="dsub"></span></div>
+    <div class="dm"><h2 id="dt"></h2></div>
+    <div class="dm"><span class="lbl" id="dmeta"></span></div>
+    <div class="dm"><p id="dsyn"></p></div>
+    <div class="dm"><p id="dcred">Written and directed by Leon Vasari. 監督作品</p></div>
+    <div class="dm"><a class="watch lbl" href="#">Watch the film / 映画を見る</a></div>
+  </div>
+  <div class="poster">
+    <svg viewBox="0 0 474 900" aria-hidden="true">
+      <defs>
+        <clipPath id="clip"><rect width="474" height="900"/></clipPath>
+        <filter id="ink" filterUnits="userSpaceOnUse" x="-200" y="-200" width="874" height="1300">
+          <feTurbulence type="fractalNoise" baseFrequency=".011" numOctaves="3" seed="7" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="120" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <mask id="inkmask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="874" height="1300">
+          <g filter="url(#ink)" fill="#fff" id="blobs"></g>
+        </mask>
+      </defs>
+      <g mask="url(#inkmask)"><g clip-path="url(#clip)"><image id="pimg" preserveAspectRatio="none"/></g></g>
+    </svg>
+  </div>
+</div>
+
+<div class="cur"><div class="ring"></div><div class="dot"></div><div class="tx"><span>OPEN<br>開く</span></div></div>
+
+<script>
+(() => {
+const $ = s => document.querySelector(s);
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const EASE = 'cubic-bezier(.2,.8,.2,1)', SHEET_EASE = 'cubic-bezier(.76,0,.18,1)';
+const CF = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2F';
+const SHEET = {
+  covers:[CF+'hf_20261029_010644_837e04ca-2418-45c1-b8e0-0233265c4cd5.png&w=1744&q=85',1744,2336],
+  spines:[CF+'hf_20261029_010738_a3e47ead-18f2-4974-9468-06d16a25edc5.png&w=2688&q=85',2688,1152],
+  fix:[CF+'hf_20261029_010831_3ebb874b-93dc-433e-87ed-6299aba720f0.png&w=1520&q=85',1520,2688],
+  fix2:[CF+'hf_20261029_092020_f96bc094-db7b-46de-9298-074a24e0a3b8.png&w=1520&q=85',1520,2688]
+};
+// id: [spine sheet, x,y,w,h, cover x,y,w,h]
+const BOX = {
+  valley:['spines',266,31,189,1089,497,72,344,659],
+  bluehour:['spines',492,31,189,1089,914,72,342,659],
+  river:['fix',197,54,324,2566,1332,72,344,659],
+  summer:['spines',937,31,188,1089,74,813,344,676],
+  green:['spines',1157,31,185,1090,497,815,344,674],
+  noon:['spines',44,32,184,1088,74,72,347,659],
+  observer:['fix2',371,15,349,2655,915,815,342,675],
+  birds:['spines',1573,31,183,1089,1331,815,345,675],
+  storm:['fix2',808,15,347,2656,74,1571,345,681],
+  tide:['spines',2012,31,188,1089,496,1577,343,678],
+  war:['spines',2236,31,189,1089,913,1579,343,676],
+  door:['spines',2462,31,188,1089,1331,1579,344,677]
+};
+const CROP = {};
+for (const id in BOX) { const b = BOX[id]; CROP['spine-'+id] = [b[0],...b.slice(1,5)]; CROP['cover-'+id] = ['covers',...b.slice(5)]; }
+
+const FILMS = [
+['valley','The Silent Valley','SHIZUKANA TANI','静かな谷',1958,'Drama',104,'A schoolteacher returns to the mountain village that exiled her father, and finds the valley has kept every one of its secrets.'],
+['bluehour','The Blue Hour','AO NO TOKI','青の刻',1962,'Romance',97,'Over one long evening in a harbour town, a widow and a stranger trade small lies until the light runs out.'],
+['river','River of Salt','SHIO NO KAWA','塩の川',1964,'Drama',121,'Two brothers drag a salt barge downriver to a city that no longer wants anything they carry.'],
+['summer','The Last Summer','SAIGO NO NATSU','最後の夏',1966,'Drama',109,'The summer before the dam floods their village, three friends set fire to everything they cannot take with them.'],
+['green','The Green Road','MIDORI NO MICHI','緑の道',1969,'Mystery',101,'A surveyor mapping a forest road keeps finding the same footprints, always one day ahead of him.'],
+['noon','Noon in Ashes','HAI NO SHOGO','灰の正午',1971,'Western',112,'A rider crosses a white desert to settle an old debt, and learns too late who sent him.'],
+['observer','The Observer','KANSATSUSHA','観察者',1973,'Thriller',96,'A night watchman begins to suspect that the building he guards has started watching him back.'],
+['birds','The Fallen Birds','OCHITA TORI','落ちた鳥',1975,'Drama',118,"When the birds stop singing over a frontier town, the mayor's daughter is the only one who goes looking for the reason."],
+['storm','Light in the Storm','ARASHI NO HI','嵐の灯',1978,'Drama',127,'A lighthouse keeper and his son wait out a three-day storm with a shipwrecked sailor who will not give his name.'],
+['tide','The Long Tide','NAGAI SHIO','長い潮',1981,'Drama',99,"A fisherman's wife counts the tides on the harbour wall while her husband's boat fails to come home."],
+['war','A Quiet War','SHIZUKANA SENSO','静かな戦争',1985,'Comedy',103,'Two neighbours fight a silent war over a garden wall for thirty years, and neither will say how it began.'],
+['door','Red Door','AKAI TOBIRA','赤い扉',1989,'Thriller',114,'A projectionist follows a reel of unknown film through the corridors of a cinema on its final night.']
+].map(([id,title,romaji,kanji,year,genre,min,syn]) => ({id,title,romaji,kanji,year,genre,min,syn}));
+const N = FILMS.length;
+
+// preload sheets
+for (const k in SHEET) new Image().src = SHEET[k][0];
+
+function crop(el, key) {
+  const [sh,x,y,w,h] = CROP[key], [url,W,H] = SHEET[sh];
+  const s = el.style;
+  s.backgroundImage = `url("${url}")`;
+  s.backgroundSize = `${W/w*100}% ${H/h*100}%`;
+  s.backgroundPosition = `${x/(W-w)*100}% ${y/(H-h)*100}%`;
+}
+
+const stage = $('.stage'), shelf = $('.shelf'), play = $('.play'), cur = $('.cur'), detail = $('.detail');
+const tapes = [];
+for (let c = 0; c < 3; c++) FILMS.forEach((f, i) => {
+  const el = document.createElement('div'); el.className = 'tape';
+  const sp = document.createElement('div'); sp.className = 'sp'; crop(sp, 'spine-'+f.id);
+  const cv = document.createElement('div'); cv.className = 'cv'; crop(cv, 'cover-'+f.id);
+  el.append(sp, cv); stage.append(el);
+  const t = {el, sp, cv, v:c*N+i, i, lift:0, r:0, hidden:false};
+  el.addEventListener('pointerenter', () => hover = t.v);
+  el.addEventListener('pointerleave', () => { if (hover === t.v) hover = -1; });
+  el.addEventListener('click', () => {
+    if (suppress) return;
+    if (Math.abs(t.r) < .5) openDetail(); else T = Math.round(T + t.r);
+  });
+  tapes.push(t);
+});
+
+// tabs
+const tabsEl = $('.tabs'), ind = $('.ind');
+const TABS = [['All / すべて',0],['1950s',1950],['1960s',1960],['1970s',1970],['1980s',1980]];
+const tabBtns = TABS.map(([label, dec]) => {
+  const b = document.createElement('button'); b.className = 'lbl'; b.textContent = label;
+  b.onclick = () => {
+    const j = dec ? FILMS.findIndex(f => Math.floor(f.year/10)*10 === dec) : 0;
+    let d = mod(j - Math.round(T), N); if (d > 6) d -= N;
+    T = Math.round(T) + d;
+  };
+  tabsEl.append(b); return b;
+});
+function setTab() {
+  const dec = Math.floor(FILMS[active].year/10)*10;
+  const i = TABS.findIndex(t => t[1] === dec);
+  tabBtns.forEach((b, k) => b.classList.toggle('on', k === i));
+  const b = tabBtns[i];
+  ind.style.width = b.offsetWidth + 'px';
+  ind.style.transform = `translateX(${b.offsetLeft}px)`;
+}
+
+// caption
+const caps = [$('.m.t'), $('.m.s'), $('.m.y')];
+function swap(mask, text, dir) {
+  const sp = document.createElement('span'); sp.textContent = text;
+  if (RM || !dir) { mask.replaceChildren(sp); return; }
+  for (const old of mask.children) {
+    if (old.dataset.leaving) continue;
+    old.dataset.leaving = 1;
+    const from = getComputedStyle(old).transform;
+    old.animate([{transform:from}, {transform:`translateY(${-dir*105}%)`}], {duration:650, easing:EASE, fill:'both'})
+      .onfinish = () => old.remove();
+  }
+  mask.append(sp);
+  sp.animate([{transform:`translateY(${dir*105}%)`}, {transform:'translateY(0)'}], {duration:650, easing:EASE, fill:'both'});
+}
+function setActive(i, dir) {
+  active = i;
+  const f = FILMS[i];
+  swap(caps[0], f.title, dir); swap(caps[1], `${f.romaji} / ${f.kanji}`, dir); swap(caps[2], f.year, dir);
+  setTab();
+}
+
+// geometry
+let H, ws, d, gap, W = innerWidth, VH = innerHeight;
+function measure() {
+  const p = document.createElement('div');
+  p.style.cssText = 'position:absolute;visibility:hidden;height:var(--H)';
+  document.body.append(p); H = p.getBoundingClientRect().height; p.remove();
+  ws = H*142/840; d = H*474/900; gap = H*.03;
+  stage.style.setProperty('--ws', ws+'px'); stage.style.setProperty('--d', d+'px');
+  W = innerWidth; VH = innerHeight;
+  setTab();
+}
+
+// state
+let active = 5, s = 5 + N, T = s, hover = -1, mx = -999, my = -999, cx = -999, cy = -999;
+let tiltX = 0, tiltY = 0, onCover = false, isOpen = false, overBtn = false;
+let drag = false, down = false, dx0 = 0, T0 = 0, suppress = false, wheelT = 0, ink = null, last = 0, curCls = '';
+const mod = (a, n) => ((a % n) + n) % n;
+const smooth = x => x*x*(3 - 2*x);
+const F = r => {
+  const B = Math.abs(r) < 1 ? (r + Math.sin(Math.PI*r)/Math.PI)/2 : Math.sign(r)*.5;
+  return r*(ws + gap) + (d - ws + 1.6*gap)*B;
+};
+
+function frame(now) {
+  const dt = Math.min(.05, (now - last)/1000 || .016); last = now;
+  if (RM || Math.abs(T - s) < 1e-4) s = T;
+  else s += (T - s)*(1 - Math.exp(-(drag ? 18 : 5.2)*dt));
+  const loops = Math.trunc(s/N);
+  if (Math.abs(loops) >= 4) { s -= loops*N; T -= loops*N; }
+  const a = mod(Math.round(s), N);
+  if (a !== active) setActive(a, Math.sign(T - s) || 1);
+
+  const settled = Math.abs(T - s) < .3;
+  onCover = !isOpen && settled && Math.abs(mx - W/2) < .55*d && Math.abs(my - VH/2) < .55*H;
+  const kt = RM ? 1 : 1 - Math.exp(-7*dt);
+  tiltY += ((onCover ? (mx - W/2)/(.55*d)*9 : (mx - W/2)/W*5) - tiltY)*kt;
+  tiltX += ((onCover ? -(my - VH/2)/(H/2)*6 : 0) - tiltX)*kt;
+  const kl = RM ? 1 : 1 - Math.exp(-12*dt);
+
+  let hoverSpine = false;
+  for (const t of tapes) {
+    const r = mod(t.v - s + 18, 36) - 18; t.r = r;
+    const x = F(r), hide = Math.abs(x) > W/2 + 1.5*d;
+    if (hide !== t.hidden) { t.hidden = hide; t.el.style.visibility = hide ? 'hidden' : ''; }
+    if (hide) continue;
+    const near = hover === t.v && Math.abs(r) > .5;
+    if (near) hoverSpine = true;
+    t.lift += ((near ? 1 : 0) - t.lift)*kl;
+    const o = smooth(Math.max(0, 1 - Math.abs(r)));
+    t.el.style.transform = `translate3d(${x}px,${-o*.025*H - t.lift*.045*H}px,${o*.2*H}px) rotateZ(${-4.5*o}deg) rotateX(${tiltX*o}deg) rotateY(${-90*o + tiltY*o}deg)`;
+    t.el.style.zIndex = Math.round(100 - Math.abs(r)*4);
+    t.sp.style.setProperty('--shade', o*.55);
+    t.cv.style.setProperty('--shade', (1 - o)*.5);
+  }
+
+  const p = isOpen ? 0 : smooth(Math.max(0, 1 - Math.abs(T - s)*3));
+  play.style.left = (W/2 - .5*d - 6) + 'px';
+  play.style.top = (VH/2 + .36*H) + 'px';
+  play.style.transform = `translate(-50%,-50%) scale(${p})`;
+  play.style.pointerEvents = p > .5 ? '' : 'none';
+
+  cx += (mx - cx)*(1 - Math.exp(-16*dt)); cy += (my - cy)*(1 - Math.exp(-16*dt));
+  cur.style.transform = `translate3d(${cx}px,${cy}px,0)`;
+  const cls = isOpen ? (overBtn ? 'btn' : '') : onCover ? 'open' : hoverSpine ? 'spine' : overBtn ? 'btn' : '';
+  if (cls !== curCls) { cur.className = 'cur ' + cls; curCls = cls; }
+
+  if (ink) {
+    const e = now - ink.t0;
+    ink.c.forEach((c, k) => { const q = Math.min(1, Math.max(0, (e - BLOBS[k][2])/1250)); c.setAttribute('r', 720*(1 - (1 - q)**3)); });
+    if (e > 2400) ink = null;
+  }
+  requestAnimationFrame(frame);
+}
+
+// detail
+const BLOBS = [[150,330,0],[340,600,120],[250,120,220],[90,760,300],[400,250,360],[260,860,420],[230,470,180]];
+const blobsG = $('#blobs'), NS = 'http://www.w3.org/2000/svg';
+const circles = BLOBS.map(([x, y]) => { const c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 0); blobsG.append(c); return c; });
+$('.detail .logo') || detail.append(document.querySelector('.top .logo').cloneNode(true));
+const lines = [...document.querySelectorAll('.dm > *')];
+let anims = [];
+
+function coverRect() {
+  const t = tapes.reduce((a, b) => Math.abs(b.r) < Math.abs(a.r) ? b : a);
+  return t.cv.getBoundingClientRect();
+}
+const inset = r => `inset(${r.top}px ${W - r.right}px ${VH - r.bottom}px ${r.left}px round 3px)`;
+const dur = n => RM ? 1 : n;
+
+function openDetail() {
+  if (isOpen) return;
+  T = Math.round(T); s = T;
+  const f = FILMS[active];
+  $('#dsub').textContent = `${f.romaji} / ${f.kanji}`;
+  $('#dt').textContent = f.title;
+  $('#dmeta').textContent = `${f.year} / ${f.genre.toUpperCase()} / ${f.min} MIN`;
+  $('#dsyn').textContent = f.syn;
+  const [sh,x,y,w,h] = CROP['cover-'+f.id], [url,SW,SH] = SHEET[sh], im = $('#pimg');
+  im.setAttribute('href', url);
+  im.setAttribute('x', -x*474/w); im.setAttribute('y', -y*900/h);
+  im.setAttribute('width', SW*474/w); im.setAttribute('height', SH*900/h);
+  circles.forEach(c => c.setAttribute('r', 0));
+  const r = coverRect();
+  isOpen = true;
+  detail.style.visibility = 'visible';
+  detail.style.transformOrigin = `${r.left + r.width/2}px ${r.top + r.height/2}px`;
+  anims = [detail.animate([
+    {clipPath:inset(r), transform:'rotate(-4.5deg)'},
+    {clipPath:'inset(0px 0px 0px 0px round 0px)', transform:'rotate(0deg)'}
+  ], {duration:dur(1050), easing:SHEET_EASE, fill:'both'})];
+  lines.forEach((l, i) => anims.push(l.animate([{transform:'translateY(110%)'}, {transform:'translateY(0)'}],
+    {duration:dur(900), delay:RM ? 0 : 620 + i*75, easing:EASE, fill:'both'})));
+  const now = performance.now();
+  ink = {t0: RM ? now - 5000 : now + 520, c: circles};
+}
+function closeDetail() {
+  if (!isOpen) return;
+  isOpen = false; ink = null;
+  const r = coverRect();
+  const a = detail.animate([
+    {clipPath:'inset(0px 0px 0px 0px round 0px)', transform:'rotate(0deg)'},
+    {clipPath:inset(r), transform:'rotate(-4.5deg)'}
+  ], {duration:dur(850), easing:SHEET_EASE, fill:'both'});
+  a.onfinish = () => { detail.style.visibility = 'hidden'; anims.forEach(x => x.cancel()); a.cancel(); anims = []; };
+  anims.push(a);
+}
+$('.close').onclick = closeDetail;
+play.onclick = openDetail;
+document.querySelector('.watch').onclick = e => e.preventDefault();
+document.querySelectorAll('.top a, .foot a').forEach(a => a.onclick = e => e.preventDefault());
+
+// inputs
+$('.arr.l').onclick = () => T = Math.round(T) - 1;
+$('.arr.r').onclick = () => T = Math.round(T) + 1;
+addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeDetail();
+  else if (isOpen) return;
+  else if (e.key === 'ArrowLeft') T = Math.round(T) - 1;
+  else if (e.key === 'ArrowRight') T = Math.round(T) + 1;
+  else if (e.key === 'Enter' && document.activeElement === document.body) openDetail();
+});
+addEventListener('wheel', e => {
+  if (isOpen) return;
+  e.preventDefault();
+  const dl = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+  T += dl/(ws + gap)*.5;
+  clearTimeout(wheelT); wheelT = setTimeout(() => T = Math.round(T), 160);
+}, {passive:false});
+shelf.addEventListener('pointerdown', e => { if (isOpen) return; down = true; drag = false; dx0 = e.clientX; T0 = T; });
+addEventListener('pointermove', e => {
+  mx = e.clientX; my = e.clientY;
+  if (cx === -999) { cx = mx; cy = my; cur.style.visibility = 'visible'; }
+  overBtn = !!e.target.closest('button,a') && !e.target.closest('.shelf');
+  if (!down) return;
+  if (!drag && Math.abs(mx - dx0) > 5) drag = true;
+  if (drag) T = T0 - (mx - dx0)/(ws + gap);
+});
+addEventListener('pointerup', () => {
+  if (!down) return;
+  down = false;
+  if (drag) { drag = false; T = Math.round(T); suppress = true; setTimeout(() => suppress = false); }
+});
+addEventListener('resize', measure);
+
+measure();
+setActive(5, 0);
+document.fonts && document.fonts.ready.then(setTab);
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
