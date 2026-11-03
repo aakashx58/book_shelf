@@ -2,6 +2,9 @@
 
 Single-file hero page (`index.html`): plain HTML, CSS and vanilla JS. No build step and no libraries.
 
+<img width="1917" height="894" alt="image" src="https://github.com/user-attachments/assets/afd0d009-d360-49fc-80fb-42dd5390d77f" />
+
+
 ## Run
 Open `index.html` in a browser. It needs a network connection for the images (Higgsfield proxy) and fonts (Google Fonts).
 
